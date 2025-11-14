@@ -5,10 +5,11 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: #f4f4f4;
+  text-align: center;
 }
 
 /* Clock Styling */
@@ -27,6 +28,7 @@ body {
 #date {
   font-size: 1.2rem;
   color: #666;
+  margin-top: 10px;
 }
 
 /* Footer Styling */
