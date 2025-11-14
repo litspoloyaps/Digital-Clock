@@ -8,51 +8,67 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f4f4f4;
+  background-color: #2e3b4e; /* Dark background for a sleek look */
+  color: #f1f1f1; /* Light text color for contrast */
   text-align: center;
 }
 
-/* Clock Styling */
+/* Clock Container Styling */
 .clock {
-  font-size: 3rem;
-  text-align: center;
-  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.6); /* Slight dark background for the clock */
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+  margin-top: 50px;
 }
 
+/* Time Styling */
 #time {
-  font-size: 4rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 5rem; /* Larger font size for visibility */
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff; /* White color for the time */
 }
 
+/* AM/PM Styling */
+#ampm {
+  font-size: 2rem;
+  color: #fff;
+  margin-left: 10px;
+}
+
+/* Date Styling */
 #date {
-  font-size: 1.2rem;
-  color: #666;
-  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #ddd; /* Lighter text for the date */
+  margin-top: 20px;
 }
 
 /* Footer Styling */
 footer {
   text-align: center;
-  padding: 15px;
-  background-color: #333;
-  color: white;
-  width: 100%;
+  padding: 20px;
+  background-color: #333; /* Dark footer background */
+  color: #fff; /* White text in the footer */
   position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 1rem;
+}
+
+/* Add a slight hover effect for the footer text */
+footer p:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
-  .clock {
-    font-size: 2rem;
-  }
-
   #time {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   #date {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
