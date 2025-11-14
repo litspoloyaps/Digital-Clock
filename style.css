@@ -1,31 +1,56 @@
+/* General Body Styling */
 body {
-  background: linear-gradient(135deg, #141e30, #243b55);
-  color: #00ffcc;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
-  margin: 0;
+  background-color: #f4f4f4;
 }
 
+/* Clock Styling */
 .clock {
+  font-size: 3rem;
   text-align: center;
-  background: rgba(0, 0, 0, 0.3);
-  padding: 40px 60px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 255, 200, 0.4);
+  margin-top: 20px;
 }
 
 #time {
-  font-size: 80px;
-  text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffff;
-  letter-spacing: 2px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #333;
 }
 
 #date {
-  margin-top: 15px;
-  font-size: 20px;
-  color: #e0f7fa;
-  text-shadow: 0 0 10px #00ffff;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .clock {
+    font-size: 2rem;
+  }
+
+  #time {
+    font-size: 3rem;
+  }
+
+  #date {
+    font-size: 1rem;
+  }
 }
