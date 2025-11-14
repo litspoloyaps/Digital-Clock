@@ -1,38 +1,39 @@
 function updateClock() {
+  const timeElement = document.getElementById('time');
+  const dateElement = document.getElementById('date');
+  
+  // Get the current time
   const now = new Date();
-
   let hours = now.getHours();
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
-  let ampm = 'AM';
+  const ampm = hours >= 12 ? 'PM' : 'AM';
 
-  // Convert hours to 12-hour format
-  if (hours >= 12) {
-    ampm = 'PM';
-    if (hours > 12) hours -= 12; // Adjust for 24-hour to 12-hour
-  } else if (hours === 0) {
-    hours = 12; // Midnight adjustment
-  }
-
-  // Add leading zeros for single digit numbers
-  hours = hours < 10 ? '0' + hours : hours;
+  // Convert to 12-hour format
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
   minutes = minutes < 10 ? '0' + minutes : minutes;
   seconds = seconds < 10 ? '0' + seconds : seconds;
 
-  // Update the time
-  document.getElementById('hours').textContent = hours;
-  document.getElementById('minutes').textContent = minutes;
-  document.getElementById('seconds').textContent = seconds;
-  document.getElementById('ampm').textContent = ampm;
+  // Format time and display
+  const timeString = `${hours} : ${minutes} : ${seconds} ${ampm}`;
+  timeElement.textContent = timeString;
 
-  // Update the date
-  const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  const dateString = now.toLocaleDateString('en-US', dateOptions);
-  document.getElementById('date').textContent = dateString;
+  // Get the current date
+  const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  
+  const day = dayNames[now.getDay()];
+  const month = monthNames[now.getMonth()];
+  const dayOfMonth = now.getDate();
+  const year = now.getFullYear();
+  
+  const dateString = `${day}, ${month} ${dayOfMonth}, ${year}`;
+  dateElement.textContent = dateString;
 }
 
-// Update the clock every second
+// Call updateClock every second to update the time
 setInterval(updateClock, 1000);
 
-// Initialize the clock immediately
+// Call it initially to set the correct time right away
 updateClock();
