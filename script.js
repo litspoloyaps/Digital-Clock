@@ -1,30 +1,38 @@
 function updateClock() {
   const now = new Date();
-
+  
   let hours = now.getHours();
-  const minutes = String(now.getMinutes()).padStart(2, '0');
-  const seconds = String(now.getSeconds()).padStart(2, '0');
-  const ampm = hours >= 12 ? 'PM' : 'AM';
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+  let ampm = 'AM';
 
-  // Convert to 12-hour format
-  hours = hours % 12 || 12;
-  hours = String(hours).padStart(2, '0');
+  // Format hours to 12-hour format
+  if (hours >= 12) {
+    ampm = 'PM';
+    if (hours > 12) hours -= 12; // Convert 24-hour time to 12-hour time
+  } else if (hours === 0) {
+    hours = 12; // Midnight hour adjustment
+  }
 
+  // Add leading zeros if necessary
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+
+  // Update the clock display
   document.getElementById('hours').textContent = hours;
   document.getElementById('minutes').textContent = minutes;
   document.getElementById('seconds').textContent = seconds;
   document.getElementById('ampm').textContent = ampm;
 
-  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-
-  const dayName = days[now.getDay()];
-  const monthName = months[now.getMonth()];
-  const date = now.getDate();
-  const year = now.getFullYear();
-
-  document.getElementById('date').textContent = `${dayName}, ${monthName} ${date}, ${year}`;
+  // Update the date
+  const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const dateString = now.toLocaleDateString('en-US', dateOptions);
+  document.getElementById('date').textContent = dateString;
 }
 
+// Update the clock every second
 setInterval(updateClock, 1000);
-updateClock(); // run immediately
+
+// Initialize the clock immediately
+updateClock();
