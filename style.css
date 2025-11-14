@@ -1,105 +1,33 @@
-/* General Body Styling */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #1e2a38; /* Dark background with a blueish tint */
-  color: #f1f1f1; /* Light text color for contrast */
-  text-align: center;
-  overflow: hidden; /* Prevent any scrollbars */
-}
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+    }
 
-/* Clock Container Styling */
-.clock {
-  background: rgba(0, 0, 0, 0.7); /* Slight dark background for the clock */
-  padding: 40px 60px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
-  margin-top: 50px;
-  transition: all 0.3s ease-in-out; /* Smooth transitions for changes */
-}
+    .clock-container {
+      text-align: center;
+      font-size: 60px;
+      font-weight: bold;
+      color: #333;
+    }
 
-/* Time Styling */
-#time {
-  font-size: 6rem; /* Larger font size for visibility */
-  font-weight: 700;
-  letter-spacing: 5px; /* More space between characters */
-  color: #fff; /* White color for the time */
-  transition: all 0.3s ease-in-out; /* Smooth transition for the time */
-}
+    .time {
+      font-size: 80px;
+      margin-bottom: 10px;
+    }
 
-/* AM/PM Styling */
-#ampm {
-  font-size: 2.5rem;
-  color: #ff7b00; /* Orange color for AM/PM */
-  margin-left: 15px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
+    .date {
+      font-size: 24px;
+      color: #666;
+    }
 
-/* Date Styling */
-#date {
-  font-size: 1.8rem;
-  color: #aaa; /* Lighter text for the date */
-  margin-top: 20px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-weight: 300;
-  transition: all 0.3s ease-in-out; /* Smooth transition for the date */
-}
-
-/* Footer Styling */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #333; /* Dark footer background */
-  color: #fff; /* White text in the footer */
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 1rem;
-  font-weight: 300;
-  opacity: 0.8;
-  transition: opacity 0.3s ease-in-out;
-}
-
-/* Add a slight hover effect for the footer text */
-footer p:hover {
-  text-decoration: underline;
-  opacity: 1;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  #time {
-    font-size: 5rem;
-  }
-
-  #date {
-    font-size: 1.5rem;
-  }
-
-  .clock {
-    padding: 30px 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  #time {
-    font-size: 4rem;
-  }
-
-  #date {
-    font-size: 1.2rem;
-  }
-
-  .clock {
-    padding: 20px 30px;
-  }
-}
+    .footer {
+      font-size: 14px;
+      color: #999;
+      margin-top: 20px;
+    }
