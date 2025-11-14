@@ -31,8 +31,10 @@ body {
 }
 
 footer {
-  text-align: center;
-  padding: 5px;
-  background-color: #abbaba;
-  color: black;
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;     /* Centers content vertically (if needed) */
+  height: 100px;           /* You can adjust the height of the footer */
+  background-color: #333;  /* Optional: Set background color */
+  color: white;            /* Optional: Set text color */
 }
