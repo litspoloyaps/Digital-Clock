@@ -8,9 +8,9 @@ body {
   color: #00ffcc;
   font-family: 'Orbitron', sans-serif;
   display: flex;
-  flex-direction: column;        /* Makes sure content is arranged vertically */
-  justify-content: space-between; /* Pushes content to top and footer to bottom */
-  align-items: center;          /* Centers content horizontally */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: 100vh;
 }
 
@@ -41,3 +41,4 @@ footer{
   color:rgba(255,255,255,0.95);
   font-size:0.9rem;
   background:transparent;
+
